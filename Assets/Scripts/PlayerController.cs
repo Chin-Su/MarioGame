@@ -152,10 +152,13 @@ onclickJump = false;
         }
     }
 
-    private void OnTriggerEnter2D(Collider2D col) // Hàm xử lý va chạm với nền tảng
+    private void OnTriggerStay2D(Collider2D col) // Hàm xử lý va chạm với nền tảng
     {
         if (col.CompareTag("Platform")) // Nếu đối tượng va chạm là nền tảng
+        {
             isPlatform = true; // CHo là nhân vật đang đứng trên nền tảng
+            rgRigidbody2D.velocity = Vector2.zero;
+        }
     }
 
     // Change size of Mario
